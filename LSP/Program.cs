@@ -94,9 +94,9 @@ public class Program
         ICourseSubscription onlineSubscription = new OnlineCourseSubscription();
         ICourseSubscription offlineSubscription = new OfflineCourseSubscription();
 
-        Course onlineCourse = new OnlineCourse { CourseId = 101, Title = "Curso de Java basico en linea" };
-        Course onsiteCourse = new OnsiteCourse { CourseId = 102, Title = "Curso presencial de Java avanzado" };
-        Course hybridCourse = new HybridCourse(onlineSubscription, offlineSubscription) { CourseId = 103, Title = "Curso de Pyton" };
+        Course onlineCourse = new OnlineCourse { CourseId = 111, Title = "Curso de Java basico en linea" };
+        Course onsiteCourse = new OnsiteCourse { CourseId = 222, Title = "Curso presencial de Java avanzado" };
+        Course hybridCourse = new HybridCourse(onlineSubscription, offlineSubscription) { CourseId = 333, Title = "Curso de Pyton" };
 
         Console.WriteLine(onlineCourse.GetDetails());
         Console.WriteLine(onsiteCourse.GetDetails());
@@ -107,3 +107,17 @@ public class Program
         hybridCourse.Subscribe(student);
     }
 }
+
+
+// Se ha añadido la clase HybridCourse para representar cursos que tienen tanto componentes en línea como presenciales.
+// Esta clase recibe dos argumentos de tipo ICourseSubscription: onlineSubscription y offlineSubscription.
+// Estos argumentos representan las estrategias de suscripción para cada parte del curso (en línea y presencial).
+//
+// Método Subscribe de HybridCourse:
+//
+// Este método se encarga de inscribir a un estudiante en el curso híbrido.
+// La inscripción se delega a las estrategias de suscripción onlineSubscription y offlineSubscription que se han pasado al crear el curso.
+//
+// Método GetCourseDetails de HybridCourse:
+//
+// Este método proporciona una descripción del curso híbrido, detallando cómo se combina el componente en línea y el presencial.
